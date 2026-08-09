@@ -47,12 +47,9 @@ test.describe("Jutenyam smoke", () => {
     await expect(page.locator('iframe[title*="harita"]')).toBeVisible();
   });
 
-  test("cookie reject works and analytics not present before consent", async ({
-    page,
-  }) => {
+  test("cookie reject dismisses banner", async ({ page }) => {
     await page.goto("/");
     await expect(page.getByRole("region", { name: "Çerez bildirimi" })).toBeVisible();
-    await expect(page.locator('script[src*="googletagmanager"]')).toHaveCount(0);
     await page.getByRole("button", { name: "Reddet" }).click();
     await expect(page.getByRole("region", { name: "Çerez bildirimi" })).toHaveCount(0);
   });

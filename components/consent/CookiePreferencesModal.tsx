@@ -63,7 +63,7 @@ export function CookiePreferencesModal({
         </h2>
         <p className="mt-2 text-sm text-muted">
           Gerekli çerezler site işleyişi için zorunludur. Analitik ve reklam
-          çerezleri yalnızca onayınızla etkinleşir.
+          araçları site deneyimini ölçmek için kullanılabilir.
         </p>
 
         <div className="mt-6 space-y-4">

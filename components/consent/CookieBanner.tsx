@@ -85,7 +85,7 @@ export function CookieBanner() {
 
   return (
     <>
-      <AnalyticsLoader consent={consent} />
+      <AnalyticsLoader />
       {!consent ? (
         <div
           className="fixed inset-x-0 bottom-[var(--mobile-bar-height)] z-[60] border-t border-border bg-surface p-4 md:bottom-0"
@@ -96,9 +96,8 @@ export function CookieBanner() {
             <div className="max-w-2xl">
               <p className="font-serif text-xl text-text">Çerez tercihleri</p>
               <p className="mt-2 text-sm text-muted">
-                Site temel işlevler için gerekli çerezleri kullanır. Analitik ve
-                reklam araçları yalnızca onayınızdan sonra yüklenir. Ayrıntılar
-                için{" "}
+                Site temel işlevler, ölçüm ve performans için çerezler kullanır.
+                Ayrıntılar için{" "}
                 <a href="/cerez-politikasi" className="text-accent underline">
                   Çerez Politikası
                 </a>{" "}

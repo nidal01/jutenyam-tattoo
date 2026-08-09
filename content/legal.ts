@@ -64,7 +64,7 @@ export const legalPages = {
       {
         heading: "Kapsam",
         paragraphs: [
-          "Gerekli çerezler site işleyişi için kullanılır ve kapatılamaz. Analitik ve reklam/pazarlama çerezleri yalnızca açık rızanızla etkinleşir.",
+          "Gerekli çerezler site işleyişi için kullanılır. Analitik ve reklam/pazarlama araçları kullanım ölçümü ve performans için yüklenebilir.",
           "Rızanızı dilediğiniz zaman Çerez Tercihleri üzerinden değiştirebilir veya geri alabilirsiniz.",
         ],
       },
@@ -85,7 +85,7 @@ export const legalPages = {
       {
         heading: "Kategoriler",
         paragraphs: [
-          "Gerekli: Tercih saklama ve temel site işlevi. Analitik: Onay sonrası kullanım ölçümü. Reklam/pazarlama: Onay sonrası Google Ads ve Meta Pixel.",
+          "Gerekli: Tercih saklama ve temel site işlevi. Analitik: Kullanım ölçümü. Reklam/pazarlama: Google Ads ve Meta Pixel.",
         ],
       },
       {

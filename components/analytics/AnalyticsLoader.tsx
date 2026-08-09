@@ -2,31 +2,24 @@
 
 import Script from "next/script";
 import { analyticsConfig } from "@/config/analytics.config";
-import type { ConsentPreferences } from "@/lib/analytics/consent";
 
-type AnalyticsLoaderProps = {
-  consent: ConsentPreferences | null;
-};
-
-export function AnalyticsLoader({ consent }: AnalyticsLoaderProps) {
-  if (!consent) return null;
-
+/** Loads GA / Ads / Meta when env flags + IDs are set (banner is UI-only). */
+export function AnalyticsLoader() {
   const loadGa =
-    consent.analytics &&
     analyticsConfig.enableAnalytics &&
     Boolean(analyticsConfig.gaMeasurementId);
 
   const loadAds =
-    consent.marketing &&
     analyticsConfig.enableGoogleAds &&
     Boolean(analyticsConfig.googleAdsId);
 
   const loadMeta =
-    consent.marketing &&
     analyticsConfig.enableMetaPixel &&
     Boolean(analyticsConfig.metaPixelId);
 
   const gaId = analyticsConfig.gaMeasurementId;
+
+  if (!loadGa && !loadAds && !loadMeta) return null;
 
   return (
     <>
