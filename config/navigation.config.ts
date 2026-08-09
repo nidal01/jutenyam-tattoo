@@ -9,29 +9,16 @@ export const mainNavigation: NavItem[] = [
   { label: "Ana Sayfa", href: "/" },
   { label: "Dövme", href: "/dovme" },
   { label: "Piercing", href: "/piercing" },
-  { label: "Kalıcı Makyaj", href: "/kalici-makyaj", shortLabel: "Kalıcı M." },
+  { label: "Kalıcı Makyaj", href: "/kalici-makyaj" },
   { label: "Portföy", href: "/portfoy" },
-  { label: "Hakkımızda", href: "/hakkimizda", shortLabel: "Hakkımızda" },
+  { label: "Hakkımızda", href: "/hakkimizda" },
   { label: "Sevgi İzi", href: "/sevgi-izi" },
   { label: "Bilgi Rehberi", href: "/bilgi-rehberi", shortLabel: "Rehber" },
   { label: "İletişim", href: "/iletisim" },
 ];
 
-/** Masaüstü nav — shortLabel dar ekranlarda tek satır için kullanılır. */
-export const desktopNavigation: NavItem[] = mainNavigation.map((item) => ({
-  ...item,
-  shortLabel:
-    item.shortLabel ??
-    (item.label === "Ana Sayfa"
-      ? "Ana"
-      : item.label === "Kalıcı Makyaj"
-        ? "Kalıcı M."
-        : item.label === "Bilgi Rehberi"
-          ? "Rehber"
-          : item.label === "Hakkımızda"
-            ? "Hakkında"
-            : undefined),
-}));
+/** Masaüstü nav — shortLabel yalnızca dar ekranda Bilgi Rehberi için. */
+export const desktopNavigation: NavItem[] = mainNavigation;
 
 export const footerServiceLinks: NavItem[] = [
   { label: "Dövme", href: "/dovme" },

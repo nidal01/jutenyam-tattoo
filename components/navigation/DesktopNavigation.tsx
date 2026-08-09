@@ -24,15 +24,14 @@ export function DesktopNavigation() {
               <Link
                 href={item.href}
                 className={cn(
-                  "inline-flex h-11 items-center whitespace-nowrap px-2 text-xs font-medium tracking-wide transition xl:px-2.5 xl:text-sm 2xl:px-3 2xl:text-[15px]",
+                  "inline-flex h-11 items-center whitespace-nowrap px-1.5 text-[11px] font-medium tracking-wide transition xl:px-2 xl:text-xs 2xl:px-2.5 2xl:text-sm",
                   active
                     ? "border-b-2 border-accent text-accent"
                     : "text-muted hover:text-text",
                 )}
                 aria-current={active ? "page" : undefined}
               >
-                <span className="2xl:hidden">{item.shortLabel ?? item.label}</span>
-                <span className="hidden 2xl:inline">{item.label}</span>
+                {item.label}
               </Link>
             </li>
           );
