@@ -36,6 +36,17 @@ export function MobileNavigation() {
     };
   }, [open]);
 
+  useEffect(() => {
+    window.dispatchEvent(
+      new CustomEvent("jutenyam:mobile-menu", { detail: { open } }),
+    );
+    return () => {
+      window.dispatchEvent(
+        new CustomEvent("jutenyam:mobile-menu", { detail: { open: false } }),
+      );
+    };
+  }, [open]);
+
   return (
     <div>
       <button

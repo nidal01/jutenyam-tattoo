@@ -88,7 +88,7 @@ export function CookieBanner() {
       <AnalyticsLoader />
       {!consent ? (
         <div
-          className="fixed inset-x-0 bottom-[var(--mobile-bar-height)] z-[60] border-t border-border bg-surface p-4 md:bottom-0"
+          className="fixed inset-x-0 bottom-[var(--mobile-bar-offset)] z-[60] border-t border-border bg-surface p-4 transition-[bottom] duration-300 md:bottom-0"
           role="region"
           aria-label="Çerez bildirimi"
         >

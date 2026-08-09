@@ -21,6 +21,7 @@
   --font-accent: var(--font-syne), system-ui, sans-serif;
   --header-height: 4.75rem;
   --mobile-bar-height: 4.25rem;
+  --mobile-bar-offset: 0px;
 }
 
 @theme inline {

@@ -18,7 +18,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-surface pb-[calc(var(--mobile-bar-height)+1rem)] pt-14 xl:pb-14">
+    <footer className="border-t border-border bg-surface pb-[calc(var(--mobile-bar-offset)+1rem)] pt-14 transition-[padding] duration-300 xl:pb-14">
       <div className="container-page grid gap-10 md:grid-cols-2 xl:grid-cols-4">
         <div>
           <Logo />
