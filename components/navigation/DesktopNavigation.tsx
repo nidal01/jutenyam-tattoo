@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { mainNavigation } from "@/config/navigation.config";
+import { desktopNavigation } from "@/config/navigation.config";
 import { cn } from "@/lib/utils/cn";
 
 export function DesktopNavigation() {
@@ -11,10 +11,10 @@ export function DesktopNavigation() {
   return (
     <nav
       aria-label="Ana menü"
-      className="hidden min-w-0 flex-1 justify-center 2xl:flex"
+      className="hidden min-w-0 flex-1 justify-center lg:flex"
     >
-      <ul className="flex flex-nowrap items-center justify-center gap-0.5">
-        {mainNavigation.map((item) => {
+      <ul className="flex flex-nowrap items-center justify-center gap-0">
+        {desktopNavigation.map((item) => {
           const active =
             item.href === "/"
               ? pathname === "/"
@@ -24,14 +24,15 @@ export function DesktopNavigation() {
               <Link
                 href={item.href}
                 className={cn(
-                  "inline-flex h-10 items-center whitespace-nowrap px-2 text-[12px] font-medium tracking-wide transition xl:px-2.5 xl:text-[13px]",
+                  "inline-flex h-10 items-center whitespace-nowrap px-1.5 text-[11px] font-medium tracking-wide transition xl:px-2 xl:text-xs 2xl:px-2.5 2xl:text-[13px]",
                   active
                     ? "border-b-2 border-accent text-accent"
                     : "text-muted hover:text-text",
                 )}
                 aria-current={active ? "page" : undefined}
               >
-                {item.label}
+                <span className="2xl:hidden">{item.shortLabel ?? item.label}</span>
+                <span className="hidden 2xl:inline">{item.label}</span>
               </Link>
             </li>
           );

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/sections/PageHero";
+import { PageVisualBanner } from "@/components/sections/PageVisualBanner";
 import { CTASection } from "@/components/sections/CTASection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServicePortfolioStrip } from "@/components/sections/ServicePortfolioStrip";
@@ -52,19 +53,22 @@ export default function KaliciMakyajPage() {
         })}
       />
       <PageHero
-        tone="light"
         eyebrow="Kalıcı Makyaj"
         title="Zarif ve kişiye özel kalıcı makyaj"
-        description="Dövme ve piercing ana odağımızdır; kalıcı makyaj ise aynı özenle, daha açık ve temiz bir görsel dilde sunulur."
+        description="Dövme ve piercing ana odağımızdır; kalıcı makyaj aynı marka dilinde, görünür ve özenli sunulur."
         crumbs={[
           { name: "Ana Sayfa", path: "/" },
           { name: "Kalıcı Makyaj", path: "/kalici-makyaj" },
         ]}
       />
-      <section className="section-light py-14">
+      <PageVisualBanner
+        image="/images/services/kalici-makyaj.webp"
+        alt="Kalıcı makyaj stüdyo çalışması"
+        caption="Kaş, dudak ve eyeliner"
+      />
+      <section className="py-14">
         <div className="container-page">
           <SectionHeading
-            tone="light"
             title="Hizmetler"
             description="Yalnızca teyit edilmiş kalıcı makyaj hizmetleri listelenir."
           />
@@ -73,7 +77,7 @@ export default function KaliciMakyajPage() {
               <Link
                 key={card.href}
                 href={card.href}
-                className="overflow-hidden border border-[rgba(24,25,29,0.12)] bg-white/50 text-text-dark transition hover:border-accent-dark"
+                className="overflow-hidden border border-border bg-surface transition hover:border-accent"
               >
                 <div className="relative aspect-[4/3]">
                   <Image
@@ -85,20 +89,20 @@ export default function KaliciMakyajPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <h2 className="font-serif text-2xl">{card.title}</h2>
-                  <p className="mt-3 text-sm text-[#4a4843]">{card.d}</p>
+                  <h2 className="font-serif text-2xl text-text">{card.title}</h2>
+                  <p className="mt-3 text-sm text-muted">{card.d}</p>
                 </div>
               </Link>
             ))}
           </div>
           <ul className="mt-10 grid gap-2 sm:grid-cols-2">
             {pmuServices.map((service) => (
-              <li key={service.id} className="text-sm text-[#4a4843]">
+              <li key={service.id} className="text-sm text-muted">
                 {service.name}
               </li>
             ))}
           </ul>
-          <p className="mt-8 max-w-3xl text-sm text-[#4a4843]">
+          <p className="mt-8 max-w-3xl text-sm text-muted">
             {businessConfig.retouchNote}
           </p>
         </div>
@@ -106,17 +110,17 @@ export default function KaliciMakyajPage() {
       <ServicePortfolioStrip
         category="pmu-eyebrow"
         title="Kaş mikropigmentasyonu"
-        limit={2}
+        limit={4}
       />
       <ServicePortfolioStrip
         category="pmu-lips"
         title="Dudak renklendirme"
-        limit={2}
+        limit={4}
       />
       <ServicePortfolioStrip
         category="pmu-eyeliner"
         title="Dipliner ve eyeliner"
-        limit={2}
+        limit={4}
       />
       <CTASection sourcePage="/kalici-makyaj" service="pmu" />
     </>

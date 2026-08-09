@@ -1,3 +1,13 @@
+import { FaqWithAside } from "@/components/sections/FaqWithAside";
+import { getFeaturedBlogPosts } from "@/content/blog";
+import { faqItems } from "@/content/faq";
+import {
+  localBusinessJsonLd,
+  personJsonLd,
+  webSiteJsonLd,
+} from "@/lib/seo/json-ld";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/sections/Hero";
 import { TrustBadges } from "@/components/sections/TrustBadges";
 import { ServiceGrid } from "@/components/sections/ServiceGrid";
@@ -8,18 +18,8 @@ import { HygienePreview } from "@/components/sections/HygienePreview";
 import { ReviewsSection } from "@/components/sections/ReviewsSection";
 import { SevgiIziPreview } from "@/components/sections/SevgiIziPreview";
 import { BlogCard } from "@/components/sections/BlogCard";
-import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { CTASection } from "@/components/sections/CTASection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { JsonLd } from "@/components/seo/JsonLd";
-import { getFeaturedBlogPosts } from "@/content/blog";
-import { faqItems } from "@/content/faq";
-import {
-  localBusinessJsonLd,
-  personJsonLd,
-  webSiteJsonLd,
-} from "@/lib/seo/json-ld";
-import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = buildPageMetadata({
   title: "Jutenyam Tattoo & Piercing | Tokat Dövme ve Piercing",
@@ -60,18 +60,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="border-y border-border bg-surface/40 py-16 md:py-20">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="SSS"
-            title="Sık sorulan sorular"
-            description="Randevu, fiyatlandırma yaklaşımı ve hizmetler hakkında kısa yanıtlar."
-          />
-          <div className="mt-8">
-            <FAQAccordion items={homeFaqs} sourcePage="/" />
-          </div>
-        </div>
-      </section>
+      <FaqWithAside
+        title="Sık sorulan sorular"
+        description="Randevu, fiyatlandırma yaklaşımı ve hizmetler hakkında kısa yanıtlar."
+        items={homeFaqs}
+        sourcePage="/"
+        asideImage="/images/studio/studio-interior.webp"
+        asideImageAlt="Jutenyam stüdyo"
+      />
       <CTASection sourcePage="/" />
     </>
   );

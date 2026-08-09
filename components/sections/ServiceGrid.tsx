@@ -8,7 +8,6 @@ const services = [
     href: "/dovme",
     description:
       "Minimalden cover-up’a, kişiye özel tasarım ve özenli uygulama.",
-    featured: true,
     image: "/images/services/dovme.webp",
     imageAlt: "Floral fine line dövme örneği",
   },
@@ -17,7 +16,6 @@ const services = [
     href: "/piercing",
     description:
       "Kulak, yüz ve vücut piercingleri ile ear styling ve takı değişimi.",
-    featured: true,
     image: "/images/services/piercing.webp",
     imageAlt: "Ear styling piercing örneği",
   },
@@ -26,7 +24,6 @@ const services = [
     href: "/kalici-makyaj",
     description:
       "Kaş mikropigmentasyonu, dudak renklendirme, dipliner ve eyeliner.",
-    featured: false,
     image: "/images/services/kalici-makyaj.webp",
     imageAlt: "Kaş mikropigmentasyonu örneği",
   },
@@ -39,18 +36,14 @@ export function ServiceGrid() {
         <SectionHeading
           eyebrow="Hizmetler"
           title="Dövme ve piercing odaklı, kalıcı makyajla tamamlanan stüdyo"
-          description="Ana odak dövme ve piercingdir. Kalıcı makyaj hizmetleri ayrı ve zarif bir alanda sunulur."
+          description="Ana odak dövme ve piercingdir. Kalıcı makyaj hizmetleri aynı marka dilinde, görünür biçimde sunulur."
         />
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {services.map((service) => (
             <Link
               key={service.href}
               href={service.href}
-              className={
-                service.featured
-                  ? "group overflow-hidden border border-border bg-surface transition hover:border-accent"
-                  : "group overflow-hidden border border-accent-soft/30 bg-[linear-gradient(160deg,#f7f3ec,#eee6dc)] text-text-dark transition hover:border-accent-dark"
-              }
+              className="group overflow-hidden border border-border bg-surface transition hover:border-accent"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
@@ -62,24 +55,10 @@ export function ServiceGrid() {
                 />
               </div>
               <div className="p-6">
-                <h3
-                  className={
-                    service.featured
-                      ? "font-serif text-3xl text-text group-hover:text-accent"
-                      : "font-serif text-3xl text-text-dark"
-                  }
-                >
+                <h3 className="font-serif text-3xl text-text group-hover:text-accent">
                   {service.title}
                 </h3>
-                <p
-                  className={
-                    service.featured
-                      ? "mt-3 text-muted"
-                      : "mt-3 text-[#4a4843]"
-                  }
-                >
-                  {service.description}
-                </p>
+                <p className="mt-3 text-muted">{service.description}</p>
                 <span className="mt-5 inline-flex text-sm font-semibold tracking-wide text-accent">
                   İncele →
                 </span>

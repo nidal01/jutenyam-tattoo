@@ -1,22 +1,29 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Fraunces, Outfit, Syne } from "next/font/google";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { businessConfig } from "@/config/business.config";
 import { getSiteUrl, siteConfig } from "@/config/site.config";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const fraunces = Fraunces({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-cormorant",
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-const manrope = Manrope({
+const outfit = Outfit({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-manrope",
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-syne",
   display: "swap",
 });
 
@@ -40,7 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className={`${cormorant.variable} ${manrope.variable} antialiased`}>
+      <body
+        className={`${fraunces.variable} ${outfit.variable} ${syne.variable} antialiased`}
+      >
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

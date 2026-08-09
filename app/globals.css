@@ -16,8 +16,9 @@
   --color-border-dark: rgba(24, 25, 29, 0.14);
   --color-success: #3d7656;
   --color-error: #a94442;
-  --font-display: var(--font-cormorant), Georgia, serif;
-  --font-body: var(--font-manrope), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-outfit), system-ui, sans-serif;
+  --font-accent: var(--font-syne), system-ui, sans-serif;
   --header-height: 4.25rem;
   --mobile-bar-height: 4.25rem;
 }
@@ -70,6 +71,10 @@ h4 {
   font-weight: 500;
   line-height: 1.15;
   letter-spacing: 0.01em;
+}
+
+.font-accent {
+  font-family: var(--font-accent);
 }
 
 a {

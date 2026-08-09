@@ -30,7 +30,7 @@ export function SectionHeading({
       {eyebrow ? (
         <p
           className={cn(
-            "mb-3 text-xs font-semibold tracking-[0.18em] uppercase",
+            "mb-3 font-accent text-xs font-semibold tracking-[0.18em] uppercase",
             tone === "dark" ? "text-accent" : "text-accent-dark",
           )}
         >

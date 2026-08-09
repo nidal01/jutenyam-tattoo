@@ -32,7 +32,7 @@ export function Logo({
         width={168}
         height={44}
         priority={priority}
-        className="h-10 w-auto"
+        className="h-8 w-auto lg:h-9 xl:h-10"
       />
     </Link>
   );

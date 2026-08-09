@@ -1,19 +1,40 @@
 export type NavItem = {
   label: string;
   href: string;
+  shortLabel?: string;
 };
 
+/** Mobil menü — tam sıra */
 export const mainNavigation: NavItem[] = [
   { label: "Ana Sayfa", href: "/" },
   { label: "Dövme", href: "/dovme" },
   { label: "Piercing", href: "/piercing" },
-  { label: "Kalıcı Makyaj", href: "/kalici-makyaj" },
+  { label: "Kalıcı Makyaj", href: "/kalici-makyaj", shortLabel: "Kalıcı M." },
   { label: "Portföy", href: "/portfoy" },
-  { label: "Hakkımızda", href: "/hakkimizda" },
+  { label: "Hakkımızda", href: "/hakkimizda", shortLabel: "Hakkımızda" },
   { label: "Sevgi İzi", href: "/sevgi-izi" },
-  { label: "Bilgi Rehberi", href: "/bilgi-rehberi" },
+  { label: "Bilgi Rehberi", href: "/bilgi-rehberi", shortLabel: "Rehber" },
   { label: "İletişim", href: "/iletisim" },
 ];
+
+/**
+ * Masaüstü nav: logo zaten ana sayfaya gider; Ana Sayfa tekrarlanmaz.
+ * shortLabel dar ekranlarda tek satır için kullanılır.
+ */
+export const desktopNavigation: NavItem[] = mainNavigation
+  .filter((item) => item.href !== "/")
+  .map((item) => ({
+    ...item,
+    shortLabel:
+      item.shortLabel ??
+      (item.label === "Kalıcı Makyaj"
+        ? "Kalıcı M."
+        : item.label === "Bilgi Rehberi"
+          ? "Rehber"
+          : item.label === "Hakkımızda"
+            ? "Hakkında"
+            : undefined),
+  }));
 
 export const footerServiceLinks: NavItem[] = [
   { label: "Dövme", href: "/dovme" },
