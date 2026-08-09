@@ -39,7 +39,7 @@ export function WhatsAppButton({
         })
       }
     >
-      {showIcon ? <WhatsAppIcon className="size-4 text-[#075E54]" /> : null}
+      {showIcon ? <WhatsAppIcon className="size-4 text-white" /> : null}
       {label}
     </a>
   );
