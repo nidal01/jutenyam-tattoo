@@ -28,7 +28,7 @@ export function Header() {
           : "border-transparent bg-background/70",
       )}
     >
-      <div className="mx-auto flex h-[var(--header-height)] w-full max-w-[1500px] items-center gap-2 px-3 sm:gap-3 sm:px-5">
+      <div className="header-shell flex h-[var(--header-height)] items-center gap-3 sm:gap-4">
         <div className="shrink-0">
           <Logo priority />
         </div>
@@ -38,7 +38,7 @@ export function Header() {
             label="WhatsApp"
             ctaLocation="header"
             sourcePage={pathname}
-            className="hidden px-3 lg:inline-flex"
+            className="hidden px-4 lg:inline-flex"
           />
           <div className="lg:hidden">
             <MobileNavigation />

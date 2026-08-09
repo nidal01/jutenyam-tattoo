@@ -19,7 +19,7 @@
   --font-display: var(--font-fraunces), Georgia, serif;
   --font-body: var(--font-outfit), system-ui, sans-serif;
   --font-accent: var(--font-syne), system-ui, sans-serif;
-  --header-height: 4.25rem;
+  --header-height: 4.75rem;
   --mobile-bar-height: 4.25rem;
 }
 
@@ -134,6 +134,21 @@ a {
 .container-page {
   width: min(1120px, calc(100% - 2rem));
   margin-inline: auto;
+}
+
+/* Header + announcement bar share the same content width */
+.header-shell {
+  width: 100%;
+  max-width: 1500px;
+  margin-inline: auto;
+  /* Previous px-3 / sm:px-5 + 20px edge breathing room */
+  padding-inline: calc(0.75rem + 20px);
+}
+
+@media (min-width: 640px) {
+  .header-shell {
+    padding-inline: calc(1.25rem + 20px);
+  }
 }
 
 .prose-legal {
