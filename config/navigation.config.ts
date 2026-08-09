@@ -17,24 +17,21 @@ export const mainNavigation: NavItem[] = [
   { label: "İletişim", href: "/iletisim" },
 ];
 
-/**
- * Masaüstü nav: logo zaten ana sayfaya gider; Ana Sayfa tekrarlanmaz.
- * shortLabel dar ekranlarda tek satır için kullanılır.
- */
-export const desktopNavigation: NavItem[] = mainNavigation
-  .filter((item) => item.href !== "/")
-  .map((item) => ({
-    ...item,
-    shortLabel:
-      item.shortLabel ??
-      (item.label === "Kalıcı Makyaj"
+/** Masaüstü nav — shortLabel dar ekranlarda tek satır için kullanılır. */
+export const desktopNavigation: NavItem[] = mainNavigation.map((item) => ({
+  ...item,
+  shortLabel:
+    item.shortLabel ??
+    (item.label === "Ana Sayfa"
+      ? "Ana"
+      : item.label === "Kalıcı Makyaj"
         ? "Kalıcı M."
         : item.label === "Bilgi Rehberi"
           ? "Rehber"
           : item.label === "Hakkımızda"
             ? "Hakkında"
             : undefined),
-  }));
+}));
 
 export const footerServiceLinks: NavItem[] = [
   { label: "Dövme", href: "/dovme" },
