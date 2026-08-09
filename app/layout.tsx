@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Outfit, Syne } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { businessConfig } from "@/config/business.config";
 import { getSiteUrl, siteConfig } from "@/config/site.config";
@@ -51,6 +52,7 @@ export default function RootLayout({
         className={`${fraunces.variable} ${outfit.variable} ${syne.variable} antialiased`}
       >
         <SiteShell>{children}</SiteShell>
+        <Analytics />
       </body>
     </html>
   );
