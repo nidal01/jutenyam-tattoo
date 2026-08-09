@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/sections/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
+import { ServicePortfolioStrip } from "@/components/sections/ServicePortfolioStrip";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -33,6 +34,7 @@ export default function Page() {
           <FAQAccordion items={faqs} sourcePage="/kalici-makyaj/dudak-renklendirme" />
         </div>
       </section>
+      <ServicePortfolioStrip category="pmu-lips" title="Dudak sonuçları" limit={3} />
       <CTASection sourcePage="/kalici-makyaj/dudak-renklendirme" service="pmu-lips" />
     </>
   );

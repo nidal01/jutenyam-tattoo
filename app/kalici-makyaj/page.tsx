@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/sections/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ServicePortfolioStrip } from "@/components/sections/ServicePortfolioStrip";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { pmuServices } from "@/content/services";
 import { businessConfig } from "@/config/business.config";
@@ -16,41 +18,106 @@ export const metadata = buildPageMetadata({
 });
 
 const cards = [
-  { href: "/kalici-makyaj/kas-mikropigmentasyonu", title: "Kaş mikropigmentasyonu", d: "Yüz hatlarına uygun kaş tasarımı ve kişiye göre değerlendirme." },
-  { href: "/kalici-makyaj/dudak-renklendirme", title: "Dudak renklendirme ve kontür", d: "Renk tercihi kişiye göre planlanır; sonuçlar kişiden kişiye değişebilir." },
-  { href: "/kalici-makyaj/dipliner-eyeliner", title: "Dipliner ve eyeliner", d: "Dipliner, klasik ve kuyruklu eyeliner ile yenileme seçenekleri." },
+  {
+    href: "/kalici-makyaj/kas-mikropigmentasyonu",
+    title: "Kaş mikropigmentasyonu",
+    d: "Yüz hatlarına uygun kaş tasarımı ve kişiye göre değerlendirme.",
+    image: "/images/portfolio/pmu-eyebrow.webp",
+    alt: "Kaş mikropigmentasyonu örneği",
+  },
+  {
+    href: "/kalici-makyaj/dudak-renklendirme",
+    title: "Dudak renklendirme ve kontür",
+    d: "Renk tercihi kişiye göre planlanır; sonuçlar kişiden kişiye değişebilir.",
+    image: "/images/portfolio/pmu-lips.webp",
+    alt: "Dudak renklendirme örneği",
+  },
+  {
+    href: "/kalici-makyaj/dipliner-eyeliner",
+    title: "Dipliner ve eyeliner",
+    d: "Dipliner, klasik ve kuyruklu eyeliner ile yenileme seçenekleri.",
+    image: "/images/portfolio/pmu-eyeliner.webp",
+    alt: "Dipliner ve eyeliner örneği",
+  },
 ];
 
 export default function KaliciMakyajPage() {
   return (
     <>
-      <JsonLd data={serviceJsonLd({ name: "Tokat Kalıcı Makyaj", description: "Kaş, dudak ve eyeliner kalıcı makyaj hizmetleri", path: "/kalici-makyaj" })} />
+      <JsonLd
+        data={serviceJsonLd({
+          name: "Tokat Kalıcı Makyaj",
+          description: "Kaş, dudak ve eyeliner kalıcı makyaj hizmetleri",
+          path: "/kalici-makyaj",
+        })}
+      />
       <PageHero
         tone="light"
         eyebrow="Kalıcı Makyaj"
         title="Zarif ve kişiye özel kalıcı makyaj"
         description="Dövme ve piercing ana odağımızdır; kalıcı makyaj ise aynı özenle, daha açık ve temiz bir görsel dilde sunulur."
-        crumbs={[{ name: "Ana Sayfa", path: "/" }, { name: "Kalıcı Makyaj", path: "/kalici-makyaj" }]}
+        crumbs={[
+          { name: "Ana Sayfa", path: "/" },
+          { name: "Kalıcı Makyaj", path: "/kalici-makyaj" },
+        ]}
       />
       <section className="section-light py-14">
         <div className="container-page">
-          <SectionHeading tone="light" title="Hizmetler" description="Yalnızca teyit edilmiş kalıcı makyaj hizmetleri listelenir." />
+          <SectionHeading
+            tone="light"
+            title="Hizmetler"
+            description="Yalnızca teyit edilmiş kalıcı makyaj hizmetleri listelenir."
+          />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {cards.map((card) => (
-              <Link key={card.href} href={card.href} className="border border-[rgba(24,25,29,0.12)] bg-white/50 p-6 text-text-dark transition hover:border-accent-dark">
-                <h2 className="font-serif text-2xl">{card.title}</h2>
-                <p className="mt-3 text-sm text-[#4a4843]">{card.d}</p>
+              <Link
+                key={card.href}
+                href={card.href}
+                className="overflow-hidden border border-[rgba(24,25,29,0.12)] bg-white/50 text-text-dark transition hover:border-accent-dark"
+              >
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={card.image}
+                    alt={card.alt}
+                    width={800}
+                    height={600}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h2 className="font-serif text-2xl">{card.title}</h2>
+                  <p className="mt-3 text-sm text-[#4a4843]">{card.d}</p>
+                </div>
               </Link>
             ))}
           </div>
           <ul className="mt-10 grid gap-2 sm:grid-cols-2">
             {pmuServices.map((service) => (
-              <li key={service.id} className="text-sm text-[#4a4843]">{service.name}</li>
+              <li key={service.id} className="text-sm text-[#4a4843]">
+                {service.name}
+              </li>
             ))}
           </ul>
-          <p className="mt-8 max-w-3xl text-sm text-[#4a4843]">{businessConfig.retouchNote}</p>
+          <p className="mt-8 max-w-3xl text-sm text-[#4a4843]">
+            {businessConfig.retouchNote}
+          </p>
         </div>
       </section>
+      <ServicePortfolioStrip
+        category="pmu-eyebrow"
+        title="Kaş mikropigmentasyonu"
+        limit={2}
+      />
+      <ServicePortfolioStrip
+        category="pmu-lips"
+        title="Dudak renklendirme"
+        limit={2}
+      />
+      <ServicePortfolioStrip
+        category="pmu-eyeliner"
+        title="Dipliner ve eyeliner"
+        limit={2}
+      />
       <CTASection sourcePage="/kalici-makyaj" service="pmu" />
     </>
   );

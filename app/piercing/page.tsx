@@ -2,6 +2,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { CTASection } from "@/components/sections/CTASection";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ServicePortfolioStrip } from "@/components/sections/ServicePortfolioStrip";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { piercingBody, piercingEar, piercingFace } from "@/content/services";
 import { faqItems } from "@/content/faq";
@@ -48,6 +49,7 @@ export default function PiercingPage() {
           <List title="Vücut piercingleri, dermal ve takı değişimi" items={piercingBody} />
         </div>
       </section>
+      <ServicePortfolioStrip category="piercing" title="Piercing portföyünden seçmeler" />
       <section className="border-y border-border bg-surface/40 py-14">
         <div className="container-page grid gap-8 lg:grid-cols-2">
           <SectionHeading title="Hijyen ve takı yaklaşımı" description="Tek kullanımlık sarf malzemeleri, müşteri önünde açılan malzemeler ve uygun materyal standartlarına sahip takı tercihi temel yaklaşımımızdır." />

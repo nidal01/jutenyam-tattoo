@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -8,6 +9,8 @@ const services = [
     description:
       "Minimalden cover-up’a, kişiye özel tasarım ve özenli uygulama.",
     featured: true,
+    image: "/images/services/dovme.webp",
+    imageAlt: "Floral fine line dövme örneği",
   },
   {
     title: "Piercing",
@@ -15,6 +18,8 @@ const services = [
     description:
       "Kulak, yüz ve vücut piercingleri ile ear styling ve takı değişimi.",
     featured: true,
+    image: "/images/services/piercing.webp",
+    imageAlt: "Ear styling piercing örneği",
   },
   {
     title: "Kalıcı Makyaj",
@@ -22,6 +27,8 @@ const services = [
     description:
       "Kaş mikropigmentasyonu, dudak renklendirme, dipliner ve eyeliner.",
     featured: false,
+    image: "/images/services/kalici-makyaj.webp",
+    imageAlt: "Kaş mikropigmentasyonu örneği",
   },
 ] as const;
 
@@ -41,31 +48,42 @@ export function ServiceGrid() {
               href={service.href}
               className={
                 service.featured
-                  ? "group border border-border bg-surface p-7 transition hover:border-accent lg:col-span-1"
-                  : "group border border-accent-soft/30 bg-[linear-gradient(160deg,#f7f3ec,#eee6dc)] p-7 text-text-dark transition hover:border-accent-dark"
+                  ? "group overflow-hidden border border-border bg-surface transition hover:border-accent"
+                  : "group overflow-hidden border border-accent-soft/30 bg-[linear-gradient(160deg,#f7f3ec,#eee6dc)] text-text-dark transition hover:border-accent-dark"
               }
             >
-              <h3
-                className={
-                  service.featured
-                    ? "font-serif text-3xl text-text group-hover:text-accent"
-                    : "font-serif text-3xl text-text-dark"
-                }
-              >
-                {service.title}
-              </h3>
-              <p
-                className={
-                  service.featured
-                    ? "mt-3 text-muted"
-                    : "mt-3 text-[#4a4843]"
-                }
-              >
-                {service.description}
-              </p>
-              <span className="mt-6 inline-flex text-sm font-semibold tracking-wide text-accent">
-                İncele →
-              </span>
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.imageAlt}
+                  width={800}
+                  height={600}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="p-6">
+                <h3
+                  className={
+                    service.featured
+                      ? "font-serif text-3xl text-text group-hover:text-accent"
+                      : "font-serif text-3xl text-text-dark"
+                  }
+                >
+                  {service.title}
+                </h3>
+                <p
+                  className={
+                    service.featured
+                      ? "mt-3 text-muted"
+                      : "mt-3 text-[#4a4843]"
+                  }
+                >
+                  {service.description}
+                </p>
+                <span className="mt-5 inline-flex text-sm font-semibold tracking-wide text-accent">
+                  İncele →
+                </span>
+              </div>
             </Link>
           ))}
         </div>

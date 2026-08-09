@@ -1,2 +1,24 @@
 filename,category,title,alt_text,consent_status,source,capture_date,result_status,published,notes
-nuran-delen-hero.png,hero,Nuran DELEN hero,Nuran DELEN Jutenyam stüdyosunda çalışırken,owner,input-assets,,n/a,pending,Kaynak henüz eklenmedi
+nuran-delen-hero.png,hero,Nuran DELEN hero,Nuran DELEN Jutenyam stüdyosunda çalışırken,studio,ai-generated-launch,2026-08-09,n/a,true,Gerçek stüdyo fotoğrafı gelince değiştirilecek
+hero-desktop.webp,hero,Hero desktop,Nuran DELEN Jutenyam stüdyosunda çalışırken,studio,derived,2026-08-09,n/a,true,
+hero-tablet.webp,hero,Hero tablet,Nuran DELEN Jutenyam stüdyosunda çalışırken,studio,derived,2026-08-09,n/a,true,
+hero-mobile.webp,hero,Hero mobile,Nuran DELEN Jutenyam stüdyosunda çalışırken,studio,derived,2026-08-09,n/a,true,
+nuran-delen.webp,artist,Artist portrait,Nuran DELEN Jutenyam stüdyosunda çalışırken,studio,derived,2026-08-09,n/a,true,
+og-home.jpg,og,Open Graph,Jutenyam Tattoo & Piercing,studio,derived,2026-08-09,n/a,true,
+studio-interior.webp,studio,Studio interior,Jutenyam stüdyo atmosferi,studio,ai-generated-launch,2026-08-09,n/a,true,
+tattoo-floral-fineline.webp,tattoo,Floral fine line,İnce çizgi floral dövme çalışması,illustrative,ai-generated-launch,2026-08-09,fresh,true,Gerçek müşteri görseliyle değiştirilebilir
+tattoo-geometric.webp,tattoo,Geometrik blackwork,Geometrik blackwork dövme çalışması,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+tattoo-lettering.webp,tattoo,Yazı dövmesi,Bilek üzerine yazı dövmesi çalışması,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+tattoo-blackgrey-rose.webp,tattoo,Siyah-gri gül,Siyah-gri gül dövme çalışması,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+tattoo-minimal.webp,tattoo,Minimal çizgi,Minimal çizgi dövme çalışması,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+tattoo-coverup.webp,tattoo,Cover-up floral,Cover-up floral dövme çalışması,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+piercing-helix.webp,piercing,Helix piercing,Helix piercing ve takı uygulaması,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+piercing-septum.webp,piercing,Septum piercing,Septum piercing uygulaması,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+piercing-ear-styling.webp,piercing,Ear styling,Kulak piercing kombinasyonu,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+piercing-nostril.webp,piercing,Burun piercing,Burun nostril piercing uygulaması,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+pmu-eyebrow.webp,pmu-eyebrow,Kaş mikropigmentasyonu,Kaş mikropigmentasyonu uygulama sonucu,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+pmu-lips.webp,pmu-lips,Dudak renklendirme,Dudak renklendirme kalıcı makyaj çalışması,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+pmu-eyeliner.webp,pmu-eyeliner,Dipliner eyeliner,Dipliner ve eyeliner kalıcı makyaj çalışması,illustrative,ai-generated-launch,2026-08-09,fresh,true,
+dovme.webp,services,Dövme kartı,Floral fine line dövme örneği,illustrative,derived,2026-08-09,n/a,true,
+piercing.webp,services,Piercing kartı,Ear styling piercing örneği,illustrative,derived,2026-08-09,n/a,true,
+kalici-makyaj.webp,services,Kalıcı makyaj kartı,Kaş mikropigmentasyonu örneği,illustrative,derived,2026-08-09,n/a,true,

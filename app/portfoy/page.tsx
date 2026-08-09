@@ -29,11 +29,15 @@ export default async function PortfoyPage({ searchParams }: Props) {
       <PageHero
         eyebrow="Portföy"
         title="Gerçek çalışmalar"
-        description="Portföy yalnızca paylaşım izni alınmış görsellerle oluşur. Sahte veya stok iş görseli kullanılmaz."
+        description="Dövme, piercing ve kalıcı makyajdan seçilmiş çalışmalar. Lansman görselleri tanıtım amaçlıdır; gerçek müşteri fotoğrafları geldikçe güncellenir."
         crumbs={[{ name: "Ana Sayfa", path: "/" }, { name: "Portföy", path: "/portfoy" }]}
       />
       <section className="py-12 md:py-16">
         <div className="container-page space-y-8">
+          <p className="max-w-3xl text-sm text-muted">
+            Aşağıdaki çalışmalar stil örnekleridir. Kendi tasarımınız için WhatsApp
+            üzerinden referans paylaşabilirsiniz.
+          </p>
           <Suspense fallback={<div className="text-muted">Filtreler yükleniyor…</div>}>
             <PortfolioFilters active={filter} />
           </Suspense>

@@ -8,7 +8,7 @@ import { faqItems } from "@/content/faq";
 import { businessConfig } from "@/config/business.config";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { faqPageJsonLd, serviceJsonLd } from "@/lib/seo/json-ld";
-import { FeaturedPortfolio } from "@/components/sections/FeaturedPortfolio";
+import { ServicePortfolioStrip } from "@/components/sections/ServicePortfolioStrip";
 
 export const metadata = buildPageMetadata({
   title: "Tokat Dövme ve Kişiye Özel Tattoo Tasarımı | Jutenyam",
@@ -49,7 +49,8 @@ export default function DovmePage() {
           </ul>
         </div>
       </section>
-      <FeaturedPortfolio />
+      <ServicePortfolioStrip category="tattoo" title="Dövme portföyünden seçmeler" />
+      <ServicePortfolioStrip category="cover-up" title="Cover-up çalışmaları" limit={3} />
       <section className="py-14">
         <div className="container-page grid gap-8 lg:grid-cols-3">
           {[

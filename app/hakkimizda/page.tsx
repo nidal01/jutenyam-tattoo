@@ -42,6 +42,27 @@ export default function HakkimizdaPage() {
             <p>2008’den bu yana Tokat Merkez’de dövme ve piercing odaklı, kalıcı makyajla desteklenen bir stüdyo deneyimi sunuyoruz.</p>
             <p>{businessConfig.slogan}</p>
             <p className="text-sm">{businessConfig.address.full}</p>
+            <p className="text-sm">{businessConfig.openingHoursDisplay}</p>
+            <p className="text-sm">{businessConfig.appointmentPolicy}</p>
+          </div>
+        </div>
+        <div className="container-page mt-12 grid gap-8 lg:grid-cols-2">
+          <Image
+            src="/images/studio/studio-interior.webp"
+            alt="Jutenyam Tattoo & Piercing stüdyo atmosferi"
+            width={1200}
+            height={675}
+            className="h-auto w-full rounded-sm object-cover"
+          />
+          <div className="flex flex-col justify-center space-y-4 text-muted">
+            <h2 className="font-serif text-3xl text-text">Stüdyo</h2>
+            <p>
+              Tokat Merkez’de modern ve sakin bir çalışma alanı. Hijyen odaklı
+              hazırlık, kişiye özel tasarım ve net iletişim temel yaklaşımımızdır.
+            </p>
+            <p className="text-sm">
+              Randevu için WhatsApp veya telefon yeterlidir. Kapora alınmamaktadır.
+            </p>
           </div>
         </div>
         {showCertificates ? (

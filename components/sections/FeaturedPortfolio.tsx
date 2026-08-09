@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { portfolioItems } from "@/content/portfolio";
 import { filterPublishedPortfolio } from "@/lib/utils/portfolio";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
 export function FeaturedPortfolio() {
   const featured = filterPublishedPortfolio(portfolioItems)
@@ -16,7 +16,7 @@ export function FeaturedPortfolio() {
         <SectionHeading
           eyebrow="Portföy"
           title="Öne çıkan çalışmalar"
-          description="Yalnızca paylaşım izni alınan gerçek çalışmalar gösterilir. Görsel yoksa stok fotoğraf kullanılmaz."
+          description="Dövme, piercing ve kalıcı makyajdan seçilmiş çalışmalar. Gerçek müşteri fotoğrafları eklendikçe güncellenir."
         />
         <div className="mt-8">
           {featured.length === 0 ? (
@@ -27,22 +27,34 @@ export function FeaturedPortfolio() {
           ) : (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((item) => (
-                <div key={item.id} className="border border-border p-2">
-                  {item.image ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
+                <Link
+                  key={item.id}
+                  href="/portfoy"
+                  className="group border border-border bg-surface/40 transition hover:border-accent"
+                >
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image
                       src={item.thumbnail ?? item.image}
                       alt={item.alt}
-                      width={480}
-                      height={480}
-                      className="aspect-square w-full object-cover"
+                      width={640}
+                      height={640}
+                      className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                       loading="lazy"
                     />
-                  ) : (
-                    <ImagePlaceholder label={item.title} />
-                  )}
-                  <p className="mt-3 px-1 font-serif text-lg">{item.title}</p>
-                </div>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-xs tracking-[0.14em] text-accent uppercase">
+                      {item.category === "tattoo"
+                        ? "Dövme"
+                        : item.category === "piercing"
+                          ? "Piercing"
+                          : "Kalıcı Makyaj"}
+                    </p>
+                    <p className="mt-1 font-serif text-lg text-text">
+                      {item.title}
+                    </p>
+                  </div>
+                </Link>
               ))}
             </div>
           )}
