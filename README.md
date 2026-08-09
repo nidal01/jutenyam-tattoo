@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jutenyam Tattoo & Piercing
 
-## Getting Started
+Tokat Merkez’de dövme, piercing ve kalıcı makyaj stüdyosu için üretime hazır Next.js web sitesi.
 
-First, run the development server:
+## Teknolojiler
+
+- Next.js (App Router) + React + TypeScript strict
+- Tailwind CSS 4
+- Zod, Lucide React
+- Vitest, Playwright, axe-core
+- pnpm
+
+## Kurulum
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+cp .env.example .env.local
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Komutlar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Komut | Açıklama |
+|-------|----------|
+| `pnpm dev` | Geliştirme sunucusu |
+| `pnpm build` | Production build |
+| `pnpm start` | Production sunucu |
+| `pnpm lint` | ESLint |
+| `pnpm typecheck` | TypeScript |
+| `pnpm test` | Birim testleri |
+| `pnpm test:e2e` | Playwright E2E |
+| `pnpm test:a11y` | Erişilebilirlik testleri |
+| `pnpm format` | Prettier |
+| `pnpm optimize:hero` | Hero görsel türevleri |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Çevre değişkenleri
 
-## Learn More
+`.env.example` dosyasına bakın:
 
-To learn more about Next.js, take a look at the following resources:
+- `NEXT_PUBLIC_SITE_URL`
+- `GOOGLE_PLACES_API_KEY`, `GOOGLE_PLACE_ID`
+- GA4 / Google Ads / Meta Pixel kimlikleri ve enable bayrakları
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Secret değerleri istemciye göndermeyin. Places API anahtarı yalnızca sunucuda kullanılır.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Görsel ekleme
 
-## Deploy on Vercel
+1. Hero: `input-assets/nuran-delen-hero.png` → `pnpm optimize:hero`
+2. Portföy: `input-assets/portfolio/...` → optimize kopya → `content/portfolio.ts`
+3. Görsel yoksa site CSS yer tutucu gösterir; stok iş görseli kullanılmaz
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Portföy / yorum / sertifika
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Portföy: `clientConsent === true` ve `published === true` şart
+- Google yorumları: API veya `content/testimonials.ts` (sahte yok)
+- Sertifikalar: `content/certificates.ts` + `featureFlags.showCertificates`
+
+## Analitik ve çerez
+
+Onay olmadan GA4 / Ads / Pixel yüklenmez. Banner: Reddet, Yalnızca gerekli, Tercihleri yönet, Kabul et.
+
+## Vercel deployment
+
+1. Projeyi Vercel’e bağlayın
+2. Env değişkenlerini ekleyin
+3. Domain: `jutenyamtattoo.com`
+
+Ayrıntı: [docs/DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md)
+
+## İçerik güncelleme
+
+[docs/CONTENT_UPDATE_GUIDE.md](docs/CONTENT_UPDATE_GUIDE.md)
+
+## Güvenlik
+
+`next.config.ts` CSP, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, HSTS (prod), frame koruması.
+
+## Yasal uyarı
+
+Yasal sayfalar taslaktır; hukuk danışmanı tarafından gözden geçirilmelidir.
