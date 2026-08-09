@@ -9,19 +9,22 @@ export function DesktopNavigation() {
   const pathname = usePathname();
 
   return (
-    <nav aria-label="Ana menü" className="hidden xl:block">
-      <ul className="flex items-center gap-1">
+    <nav
+      aria-label="Ana menü"
+      className="hidden min-w-0 flex-1 justify-center 2xl:flex"
+    >
+      <ul className="flex flex-nowrap items-center justify-center gap-0.5">
         {mainNavigation.map((item) => {
           const active =
             item.href === "/"
               ? pathname === "/"
               : pathname === item.href || pathname.startsWith(`${item.href}/`);
           return (
-            <li key={item.href}>
+            <li key={item.href} className="shrink-0">
               <Link
                 href={item.href}
                 className={cn(
-                  "inline-flex min-h-11 items-center px-2.5 text-[13px] font-medium tracking-wide transition",
+                  "inline-flex h-10 items-center whitespace-nowrap px-2 text-[12px] font-medium tracking-wide transition xl:px-2.5 xl:text-[13px]",
                   active
                     ? "border-b-2 border-accent text-accent"
                     : "text-muted hover:text-text",

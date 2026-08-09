@@ -1,11 +1,12 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { MessageCircle, Phone, MapPinned } from "lucide-react";
+import { Phone, MapPinned } from "lucide-react";
 import { businessConfig } from "@/config/business.config";
 import { buildWhatsAppUrl } from "@/lib/utils/whatsapp";
 import { buildPhoneUrl } from "@/lib/utils/phone";
 import { trackEvent } from "@/lib/analytics/track";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 export function MobileContactBar() {
   const pathname = usePathname();
@@ -28,7 +29,7 @@ export function MobileContactBar() {
             })
           }
         >
-          <MessageCircle className="size-5 text-[#3d9b6e]" aria-hidden />
+          <WhatsAppIcon className="size-5 text-[#25D366]" />
           WhatsApp
         </a>
         <a

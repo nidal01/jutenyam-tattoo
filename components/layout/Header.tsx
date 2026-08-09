@@ -28,16 +28,21 @@ export function Header() {
           : "border-transparent bg-background/70",
       )}
     >
-      <div className="container-page flex h-[var(--header-height)] items-center justify-between gap-4">
-        <Logo priority />
+      <div className="mx-auto flex h-[var(--header-height)] w-full max-w-[1400px] items-center gap-3 px-4 sm:px-6">
+        <div className="shrink-0">
+          <Logo priority />
+        </div>
         <DesktopNavigation />
-        <div className="flex items-center gap-3">
+        <div className="ml-auto flex shrink-0 items-center gap-2">
           <WhatsAppButton
+            label="WhatsApp"
             ctaLocation="header"
             sourcePage={pathname}
-            className="hidden sm:inline-flex"
+            className="hidden px-3 sm:inline-flex"
           />
-          <MobileNavigation />
+          <div className="2xl:hidden">
+            <MobileNavigation />
+          </div>
         </div>
       </div>
     </header>

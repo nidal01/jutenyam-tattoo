@@ -105,10 +105,10 @@ export function CookieBanner() {
                 sayfasına bakabilirsiniz.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="grid w-full grid-cols-2 gap-2 sm:grid-cols-4 lg:w-auto lg:min-w-[28rem]">
               <button
                 type="button"
-                className="min-h-11 border border-border px-4 text-sm font-semibold text-text"
+                className="min-h-11 whitespace-nowrap border border-border px-3 text-sm font-semibold text-text"
                 onClick={() =>
                   persist({
                     necessary: true,
@@ -122,7 +122,7 @@ export function CookieBanner() {
               </button>
               <button
                 type="button"
-                className="min-h-11 border border-border px-4 text-sm font-semibold text-text"
+                className="min-h-11 whitespace-nowrap border border-border px-3 text-sm font-semibold text-text"
                 onClick={() =>
                   persist({
                     necessary: true,
@@ -136,14 +136,14 @@ export function CookieBanner() {
               </button>
               <button
                 type="button"
-                className="min-h-11 border border-border px-4 text-sm font-semibold text-text"
+                className="min-h-11 whitespace-nowrap border border-border px-3 text-sm font-semibold text-text"
                 onClick={() => setPreferencesOpen(true)}
               >
                 Tercihleri yönet
               </button>
               <button
                 type="button"
-                className="min-h-11 bg-accent px-4 text-sm font-semibold text-text-dark"
+                className="min-h-11 whitespace-nowrap bg-accent px-3 text-sm font-semibold text-text-dark"
                 onClick={() =>
                   persist({
                     necessary: true,

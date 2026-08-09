@@ -1,9 +1,9 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/utils/whatsapp";
 import { trackEvent } from "@/lib/analytics/track";
 import { cn } from "@/lib/utils/cn";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 
 type WhatsAppButtonProps = {
   label?: string;
@@ -28,7 +28,7 @@ export function WhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "inline-flex min-h-11 min-w-11 items-center justify-center gap-2 bg-[#1f6b4a] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#2a855c]",
+        "inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center gap-2 whitespace-nowrap bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-[#075E54] transition hover:bg-[#20bd5a]",
         className,
       )}
       onClick={() =>
@@ -39,7 +39,7 @@ export function WhatsAppButton({
         })
       }
     >
-      {showIcon ? <MessageCircle className="size-4" aria-hidden /> : null}
+      {showIcon ? <WhatsAppIcon className="size-4 text-[#075E54]" /> : null}
       {label}
     </a>
   );

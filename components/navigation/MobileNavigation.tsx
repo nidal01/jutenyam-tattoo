@@ -37,7 +37,7 @@ export function MobileNavigation() {
   }, [open]);
 
   return (
-    <div className="xl:hidden">
+    <div>
       <button
         type="button"
         className="inline-flex min-h-11 min-w-11 items-center justify-center border border-border text-text"
