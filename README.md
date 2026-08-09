@@ -57,7 +57,7 @@ Secret değerleri istemciye göndermeyin. Places API anahtarı yalnızca sunucud
 
 ## Analitik ve çerez
 
-Onay olmadan GA4 / Ads / Pixel yüklenmez. Banner: Reddet, Yalnızca gerekli, Tercihleri yönet, Kabul et.
+Onay olmadan GA4 / Ads / Pixel yüklenmez. Banner: Reddet, Kabul et. Detaylı tercihler footer’dan açılabilir.
 
 ## Vercel deployment
 
