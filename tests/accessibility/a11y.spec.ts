@@ -14,7 +14,7 @@ async function expectNoCriticalViolations(page: import("@playwright/test").Page)
 }
 
 async function dismissCookies(page: import("@playwright/test").Page) {
-  const button = page.getByRole("button", { name: "Yalnızca gerekli" });
+  const button = page.getByRole("button", { name: "Reddet" });
   if (await button.isVisible().catch(() => false)) {
     await button.click();
   }

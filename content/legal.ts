@@ -91,7 +91,7 @@ export const legalPages = {
       {
         heading: "Yönetim",
         paragraphs: [
-          "İlk ziyarette Reddet, Yalnızca gerekli, Tercihleri yönet ve Kabul et seçenekleri sunulur. Footer’daki Çerez Tercihleri bağlantısından ayarları değiştirebilirsiniz.",
+          "İlk ziyarette Reddet ve Kabul et seçenekleri sunulur. Footer’daki Çerez Tercihleri bağlantısından ayarları değiştirebilirsiniz.",
         ],
       },
     ],
